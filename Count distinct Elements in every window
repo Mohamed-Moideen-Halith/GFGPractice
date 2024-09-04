@@ -1,0 +1,27 @@
+
+
+# partially correct own solution
+
+ArrayList<Integer> countDistinct(int A[], int n, int k)
+    {
+        // code here 
+        HashSet<Integer> set = new HashSet<Integer>();
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        int left = 0,right = k-1;
+        
+        while(right < n){
+            
+            for(int i = left;i <= right;i++){
+                set.add(A[i]);
+            }
+            
+            list.add(set.size());
+            set.clear();
+            left++;
+            right++;
+            
+        }
+        
+        return list;
+    }
