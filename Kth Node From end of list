@@ -1,0 +1,30 @@
+
+
+// 100% correct solution
+
+class Solution {
+
+    // Function to find the data of kth node from
+    // the end of a linked list.
+    int getKthFromLast(Node head, int k) {
+        // Your code here
+        
+        
+        
+        Node temp1 = head;
+        Node temp2 = head;
+        
+        for(int i = 1;i < k;i++){
+            if(temp2 == null || temp2.next == null) return -1;
+            temp2 = temp2.next;
+        }
+        
+        while(temp2.next != null){
+            temp1 = temp1.next;
+            temp2 = temp2.next;
+            
+        }
+        
+        return temp1.data;
+    }
+}
